@@ -1,0 +1,26 @@
+@use '../../../style/variables' as *;
+@use '../../../style/mixins' as *;
+
+.banner {
+  background-color: $brand-grey;
+  background-position: center center;
+  background-size: cover;
+  height: rem(210px);
+  position: relative;
+  .mask {
+    background: rgba($color: #000000, $alpha: 0.35);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  .content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 2;
+  }
+}

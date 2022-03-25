@@ -1,0 +1,37 @@
+@use './variables' as var;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var.$font-size-html;
+  height: 100%;
+  line-height: var.$line-height-base;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var.$brand-white;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: var.$font-regular;
+  font-size: var.$font-size-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  line-height: var.$line-height-base;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}

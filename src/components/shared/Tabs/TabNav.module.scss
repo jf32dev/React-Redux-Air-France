@@ -1,0 +1,36 @@
+@use '../../../style/variables.scss' as v;
+@use '../../../style/mixins.scss' as m;
+
+.container {
+  flex: 0 0 auto;
+  .tabs-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .tab-title {
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      font-size: m.rem(15px);
+      line-height: m.rem(17px);
+      padding: m.rem(10px);
+      text-align: start;
+      text-transform: uppercase;
+
+      &.active,
+      &:hover {
+        color: v.$brand-navy;
+        font-family: v.$font-bold;
+      }
+
+      &.disabled {
+        color: v.$brand-grey;
+        pointer-events: none;
+      }
+
+      &.inverted {
+        color: v.$brand-white;
+        padding: 0 m.rem(10px) m.rem(10px) 0;
+      }
+    }
+  }
+}

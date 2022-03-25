@@ -1,0 +1,47 @@
+@use '../../../style/mixins.scss' as m;
+@use '../../../style/variables.scss' as v;
+
+.nav {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  padding: m.rem(0px) m.rem(40px);
+
+  @include m.media('<=900px') {
+    padding: m.rem(0px) m.rem(20px);
+  }
+
+  .logo {
+    padding: m.rem(15px) 0;
+    svg {
+      height: m.rem(18px);
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+
+    span {
+      color: v.$brand-navy;
+      cursor: pointer;
+      font-family: v.$font-bold;
+      padding: m.rem(15px) 8px;
+      &:not(:last-child) {
+        margin-right: m.rem(24px);
+
+        @include m.media('<=950px') {
+          margin-right: m.rem(4px);
+        }
+      }
+
+      &:first-child {
+        margin-left: m.rem(12px);
+      }
+
+      &.active {
+        border-bottom: 5px solid v.$brand-navy;
+      }
+    }
+  }
+}

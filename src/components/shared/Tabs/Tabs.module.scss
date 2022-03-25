@@ -1,0 +1,44 @@
+@use '../../../style/variables.scss' as v;
+@use '../../../style/mixins.scss' as m;
+
+.tabs {
+  .nav-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .nav {
+      flex: 1;
+      font-size: m.rem(15px);
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .more {
+      cursor: pointer;
+      margin: m.rem(10px);
+      @include m.clamp(1);
+    }
+  }
+
+  .tab {
+    padding: 0 m.rem(10px);
+  }
+
+  &.highlighted {
+    background-color: v.$brand-navy;
+    border-radius: 6px;
+
+    margin: m.rem(10px);
+    padding: m.rem(15px);
+
+    .more {
+      color: v.$brand-white;
+      margin: 0 0 m.rem(10px) 0;
+    }
+
+    .tab {
+      padding: 0;
+    }
+  }
+}

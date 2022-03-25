@@ -1,0 +1,27 @@
+extends:
+# https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/config-conventional/index.js
+- "@commitlint/config-conventional"
+rules:
+  header-max-length: [2, always, 72]
+  footer-max-line-length: [1, always, 72]
+  scope-empty: 
+    - 0 # disabling scope since not much scope in homescreen / smaller project
+  scope-enum: 
+    - 0
+  type-enum:
+      - 2
+      - always
+      - - build # affect the build system or external dependencies
+        - ci # CI configuration files and scripts
+        - chore # changes to process e.g. eslint config
+        - docs # documentation only
+        - feat # new feature
+        - fix # bug fix
+        - perf # improves performance
+        - refactor # neither fixes a bug nor adds a feature
+        - style # do not affect the meaning of the code, e.g. formatting
+        - test # add/update/remove tests
+parserPreset:
+  parserOpts:
+    issuePrefixes:
+      - GS- # Global Services

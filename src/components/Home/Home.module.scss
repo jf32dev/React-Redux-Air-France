@@ -1,0 +1,58 @@
+@use "../../style/variables" as *;
+@use '../../style/mixins' as *;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .banner {
+    align-items: center;
+    display: flex;
+    flex: 0 0 rem(140px);
+    justify-content: space-between;
+    padding: 0 rem(40px);
+
+    h3 {
+      color: $brand-white;
+      font-family: $font-regular;
+      font-size: rem(50px);
+      font-weight: 100;
+      margin: 0;
+      padding: 0;
+      strong {
+        font-family: $font-bold;
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+    overflow: hidden;
+    padding: rem(10px) rem(40px);
+
+    @include media('<=945px') {
+      padding: rem(10px) rem(20px);
+    }
+
+    @include media('<=895px') {
+      padding: rem(10px) rem(10px);
+    }
+
+    .content {
+      flex: 1;
+      height: calc(100vh - #{rem(210px)});
+      overflow: auto;
+      padding-right: rem(20px);
+
+      .top-content {
+        display: grid;
+        grid-template-columns: 1.1fr 1.9fr;
+      }
+
+      .single {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

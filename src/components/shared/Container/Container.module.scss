@@ -1,0 +1,5 @@
+@use '../../../style/mixins.scss' as *;
+
+.container {
+  padding: rem(20px) rem(40px);
+}

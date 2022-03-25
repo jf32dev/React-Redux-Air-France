@@ -1,0 +1,111 @@
+@use "../../style/variables" as *;
+@use '../../style/mixins' as *;
+
+.container {
+  font-size: inherit;
+  height: 100%;
+  overflow-y: auto;
+  padding: rem(40px);
+
+  .load {
+    height: rem(200px);
+    width: 100%;
+  }
+
+  .cards {
+    &.loading {
+      display: block;
+    }
+    column-gap: rem(10px);
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    padding-bottom: rem(25px);
+    row-gap: rem(10px);
+
+    @include media('<=1360px') {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @include media('<=1200px') {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    @include media('<=1040px') {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include media('<=920px') {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    &.full {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      align-items: center;
+
+      background: url('../../assets/images/rect.png');
+
+      border-radius: 8px;
+      color: $brand-white;
+      cursor: pointer;
+
+      display: flex;
+
+      font-family: $font-regular;
+      font-size: rem(14px);
+      height: rem(130px);
+      justify-content: center;
+
+      padding: 0 rem(20px);
+
+      text-align: center;
+
+      &.full {
+        height: rem(235px);
+      }
+
+      &.active,
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .name {
+        @include clamp(3);
+      }
+    }
+  }
+
+  .title {
+    border-bottom: 1px solid rgba($color: $brand-grey, $alpha: 0.4);
+    color: $brand-navy;
+    font-family: $font-bold;
+    font-size: rem(22px);
+    margin: 0;
+    padding: rem(10px) 0;
+
+    &.fixed {
+      background-color: white;
+      border-bottom: unset;
+      box-shadow: 0px 5px 2px -2px rgba(0, 0, 0, 0.15);
+      margin-left: rem(-40px);
+      padding: rem(10px) rem(40px);
+      position: fixed;
+      top: 0;
+      transform: translateY(110%);
+      width: 100%;
+      z-index: 100;
+    }
+  }
+
+  .stories {
+    margin: 0 rem(-40px);
+    padding: 0 rem(40px);
+
+    &.pt {
+      padding: rem(50px) rem(40px) 0 rem(40px);
+    }
+  }
+}

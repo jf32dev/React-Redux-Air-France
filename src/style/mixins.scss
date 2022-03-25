@@ -1,0 +1,18 @@
+@use './variables' as v;
+
+@forward './grid/mixins' as grid-*;
+@forward './includemedia';
+
+@function rem($size) {
+  $remSize: $size / v.$font-size-html;
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin clamp($line) {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  height: auto;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}

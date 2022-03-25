@@ -1,0 +1,5 @@
+"*.{js,jsx,ts,tsx,md,html,css,scss,json}": 
+ - prettier --write
+ - git add
+"*.{js,ts,tsx}": eslint --cache --fix
+"*.{css,scss}": stylelint --fix

@@ -1,0 +1,45 @@
+@use '../../style/mixins.scss' as *;
+@use '../../style/variables.scss' as *;
+
+.list {
+  height: 100%;
+  .header {
+    align-items: center;
+    background-color: $brand-white-10;
+    border-bottom: 1px solid rgba($color: $brand-grey, $alpha: 0.3);
+    display: flex;
+    height: rem(60px);
+    justify-content: center;
+    position: relative;
+
+    .back {
+      cursor: pointer;
+      display: flex;
+      left: rem(20px);
+      position: absolute;
+      svg {
+        margin-right: rem(5px);
+      }
+    }
+    h3 {
+      font-family: $font-bold;
+      font-size: rem(17px);
+      line-height: rem(24px);
+      margin: 0;
+    }
+  }
+
+  .container {
+    height: calc(100% - 60px);
+    overflow-y: auto;
+
+    .content-wrapper {
+      display: grid;
+      grid-gap: rem(20px);
+      grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
+      .card {
+        width: auto;
+      }
+    }
+  }
+}

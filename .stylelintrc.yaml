@@ -1,0 +1,32 @@
+---
+extends: stylelint-config-recommended
+plugins:
+- stylelint-scss
+- stylelint-order
+- stylelint-prettier
+rules:
+  color-no-invalid-hex: true
+  font-family-no-duplicate-names: true
+  unit-no-unknown: true
+  property-no-unknown:
+  - true
+  - ignoreProperties:
+    - xs
+    - sm
+    - md
+    - lg
+    - xl
+  selector-pseudo-class-no-unknown:
+  - true
+  - ignorePseudoClasses:
+    - global
+    - export
+  selector-pseudo-element-no-unknown: true
+  at-rule-no-unknown: 
+  comment-no-empty: true
+  no-duplicate-selectors: true
+  no-extra-semicolons: true
+  unit-case: lower
+  property-case: lower
+  prettier/prettier: true
+  order/properties-alphabetical-order: true

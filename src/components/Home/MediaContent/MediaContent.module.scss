@@ -1,0 +1,33 @@
+@use '../../../style/mixins.scss' as m;
+
+.container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: m.rem(20px);
+
+  &.full {
+    column-gap: m.rem(10px);
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: m.rem(20px);
+
+    @include m.media('<=1650px') {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    @include m.media('<=1420px') {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @include m.media('<=1190px') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include m.media('<=960px') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .latest-card-outter {
+    padding: 0;
+  }
+}

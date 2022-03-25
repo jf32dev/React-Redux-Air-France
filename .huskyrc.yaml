@@ -1,0 +1,3 @@
+hooks:
+  pre-commit: yarn typecheck && lint-staged
+  commit-msg: commitlint -E HUSKY_GIT_PARAMS

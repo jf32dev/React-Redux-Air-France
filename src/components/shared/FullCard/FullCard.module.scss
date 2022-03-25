@@ -1,0 +1,42 @@
+@use '../../../style/variables.scss' as *;
+@use '../../../style/mixins.scss' as *;
+
+.fullcard {
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: rem(4px);
+  cursor: pointer;
+  display: flex;
+  height: rem(270px);
+  justify-content: center;
+  position: relative;
+  width: rem(470px);
+
+  .mask {
+    align-items: center;
+    background: linear-gradient(transparent 60%, black);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .content {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    font-size: rem(14px);
+    height: 100%;
+    justify-content: flex-end;
+    padding: rem(24px);
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+}

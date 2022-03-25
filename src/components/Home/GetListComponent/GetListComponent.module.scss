@@ -1,0 +1,64 @@
+@use '../../../style/mixins.scss' as m;
+
+.container {
+  column-gap: m.rem(10px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: m.rem(15px);
+  row-gap: m.rem(10px);
+
+  &.fit {
+    padding-bottom: 0;
+  }
+
+  &.full {
+    &.card {
+      grid-template-columns: repeat(6, 1fr);
+
+      @include m.media('<=1350px') {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      @include m.media('<=1050px') {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include m.media('<=850px') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &.horizontal {
+      grid-template-columns: repeat(4, 1fr);
+
+      @include m.media('<=1300px') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include m.media('<=1050px') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &.latest {
+      column-gap: 0;
+
+      grid-template-columns: repeat(7, 1fr);
+      row-gap: m.rem(20px);
+
+      @include m.media('<=1650px') {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      @include m.media('<=1420px') {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      @include m.media('<=1190px') {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include m.media('<=960px') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  .latest-card-outter {
+    padding: 0;
+  }
+}

@@ -1,0 +1,85 @@
+@use '../../../style/variables.scss' as *;
+@use '../../../style/mixins.scss' as *;
+
+.card {
+  border-radius: rem(10px);
+  box-shadow: 0 0 6px 2px rgba(34, 34, 34, 0.15);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: rem(240px);
+  overflow: hidden;
+
+  &.small {
+    height: rem(210px);
+  }
+
+  .thumbnail {
+    background-color: $brand-grey;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.01);
+    border-top-left-radius: rem(10px);
+    border-top-right-radius: rem(10px);
+    flex: 3;
+    min-height: 0;
+    position: relative;
+    img {
+      border-top-left-radius: rem(10px);
+      border-top-right-radius: rem(10px);
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+    }
+    .iconography {
+      padding: rem(16px);
+      position: absolute;
+      &.top {
+        right: 0;
+        top: 0;
+      }
+      &.bottom {
+        bottom: 0;
+        left: 0;
+      }
+      span {
+        + span {
+          margin-left: rem(10px);
+        }
+        align-items: center;
+        color: $brand-white;
+        display: flex;
+        svg {
+          margin-right: rem(8px);
+          width: rem(14px);
+          path {
+            fill: $brand-white;
+          }
+        }
+      }
+    }
+  }
+  .detail {
+    background-color: $brand-white;
+    flex: 1;
+    font-size: rem(14px);
+    padding: rem(16px);
+
+    .date {
+      color: $brand-grey-2;
+      font-size: rem(12px);
+      margin-top: 4px;
+      @include clamp(1);
+    }
+
+    .title {
+      color: $brand-black;
+      display: block;
+      font-family: $font-bold;
+      @include clamp(2);
+
+      &.small {
+        @include clamp(1);
+      }
+    }
+  }
+}
