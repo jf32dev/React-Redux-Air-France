@@ -14,12 +14,6 @@ See deployment for notes on how to deploy the project on a live system.
 
 ## Prerequisites
 
-Clone the repository locally (preferable using ssh)
-
-```
-git clone git@bitbucket.org:bigtincan/gs-hs-template.git
-```
-
 Things you need to install before started :
 
 - [Node](https://nodejs.org/en/download/)
